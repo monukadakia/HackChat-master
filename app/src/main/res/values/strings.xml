@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">HackChat</string>
+
+    <string name="hackathons">Hackathons</string>
+    <string name="action_settings">Settings</string>
+    <string name="lahacks">LA Hacks</string>
+    <string name="bc">Bit Camp</string>
+    <string name="cat">Categories</string>
+</resources>

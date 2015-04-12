@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="momo.HackChat" >
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        android:name= "momo.HackChat.MoxtraApplication" >
+
+        <meta-data android:name="com.moxtra.sdk.ClientId" android:value="oE4NEU_wnJs" />
+        <meta-data android:name="com.moxtra.sdk.ClientSecret" android:value="uS2LdAXWkzY" />
+
+        <activity
+            android:name="momo.HackChat.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="momo.HackChat.LAOptions"></activity>
+        <activity android:name="momo.HackChat.BitCampOptions"></activity>
+        <activity android:name="momo.HackChat.BrickHackOptions"></activity>
+        <activity android:name="momo.HackChat.HackRUOptions"></activity>
+        <activity android:name="momo.HackChat.CarlHacksOptions"></activity>
+        <activity android:name="momo.HackChat.RedbirdHacksOptions"></activity>
+        <activity android:name="momo.HackChat.Project34Options"></activity>
+        <activity android:name="momo.HackChat.LACategories"></activity>
+        <activity android:name="momo.HackChat.BitCampCategories"></activity>
+        <activity android:name="momo.HackChat.BrickHackCategories"></activity>
+        <activity android:name="momo.HackChat.HackRUCategories"></activity>
+        <activity android:name="momo.HackChat.CarlHacksCategories"></activity>
+        <activity android:name="momo.HackChat.RedbirdHacksCategories"></activity>
+        <activity android:name="momo.HackChat.Project34Categories"></activity>
+
+        <activity
+            android:name="com.moxtra.binder.conversation.MXConversationActivity"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="stateHidden|adjustResize"
+            android:theme="@style/MoxtraTheme" />
+
+        <activity
+            android:name="com.moxtra.binder.pageview.PageViewActivity"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="stateHidden|adjustPan"
+            android:theme="@style/MoxtraTheme" />
+
+        <service android:name="com.moxtra.binder.service.AudioPlayerService" />
+
+        <activity
+            android:name="com.moxtra.binder.livemeet.LiveMeetActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/MoxtraTheme"
+            android:parentActivityName="momo.HackChat.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="momo.HackChat.MainActivity"/>
+        </activity>
+
+        <activity
+            android:name="com.moxtra.binder.activity.MXStackActivity"
+            android:theme="@style/MXActivityDialog"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+
+        <activity
+            android:name="com.moxtra.binder.member.MXInviteActivity"
+            android:theme="@style/MXActivityDialog"
+            android:windowSoftInputMode="stateHidden" />
+
+        <activity
+            android:name="com.moxtra.binder.multiimagepicker.MultiImagePickerActivity"
+            android:theme="@style/MoxtraTheme" />
+
+        <activity
+            android:name="com.moxtra.binder.util.MXAlertDialog"
+            android:theme="@style/MoxFullTranslucentActivity"
+            android:windowSoftInputMode="stateHidden" />
+
+        <activity
+            android:name="com.moxtra.sdk.MXRemoteNotificationActivity"
+            android:noHistory="true"
+            android:theme="@style/MoxTransparentActivity" />
+
+        <receiver android:name="com.moxtra.binder.service.BootCompletedIntentReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.moxtra.binder.service.MXRemoteNotificationService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote">
+
+            <intent-filter android:priority="1000">
+                <action android:name=".INotificationService" />
+            </intent-filter>
+        </service>
+
+        <service android:name="com.moxtra.binder.service.RingService" />
+
+        <service android:name="com.moxtra.binder.service.MeetService">
+            <intent-filter android:priority="1000">
+                <action android:name="moxtra.intent.action.START_MEET" />
+            </intent-filter>
+        </service>
+        <!-- END  -->
+    </application>
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+</manifest>
